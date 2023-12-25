@@ -22,14 +22,19 @@ int main(int argc, char **argv)
 
 bool checkCollision(float aX, float aY, float aW, float aH, float bX, float bY, float bW, float bH)
 {
+    // Check if the bottom of object A is above the top of object B
     if (aY + aH < bY)
         return false;
+    // Check if the top of object A is below the bottom of object B
     else if (aY > bY + bH)
         return false;
+    // Check if the right side of object A is to the left of the left side of object B
     else if (aX + aW < bX)
         return false;
+    // Check if the left side of object A is to the right of the right side of object B
     else if (aX > bX + bW)
         return false;
+    // If none of the above conditions are met, the objects are colliding
     else
         return true;
 }
