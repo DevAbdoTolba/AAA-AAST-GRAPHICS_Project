@@ -30,7 +30,22 @@ void myDisplay(void);
 int main(int argc, char** argv){
 
     
+    glutInit(&argc, argv);  // Initialize GLUT
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    glutInitWindowSize(760, 480);
+    glutInitWindowPosition(100, 150);
+    glutCreateWindow("Brick Breaker By Tanvir Hossen Bappy");
 
+    // Register your GLUT callback functions and initialize other settings
+    glutDisplayFunc(myDisplay);
+    glutSpecialFunc(keyboard);
+    glutMouseFunc(mouse);
+
+    myInit();  // Initialize your settings
+
+    glutMainLoop();  // Enter the GLUT main event loop
+
+    return 0;
 
     return 0;
 }
